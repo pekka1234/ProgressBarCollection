@@ -15,7 +15,11 @@ def tqdm_func():
         speeds = input("Enter all progress finishing time (in seconds and seperated by a ',', for exmp. 12,44,13):\n")
     else:
         speeds = input("Enter finishing time (in seconds):\n")
-    print(barCunt,speeds)        
+    speeds = [int(x) for x in speeds.split(",")]    
+    print(barCunt, speeds)  
+    for x in range(len(speeds)):
+        for y in tqdm(range(100)):
+            time.sleep(speeds[x] / 100)      
 
 def halo_func():
     print("gay")
